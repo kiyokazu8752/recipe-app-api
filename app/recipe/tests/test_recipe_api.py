@@ -17,6 +17,7 @@ from core.models import Recipe
 from recipe.serializers import RecipeSerializer
 from recipe.serializers import RecipeDetailSerializer
 
+
 RECIPES_URL = reverse('recipe:recipe-list')
 
 
@@ -57,7 +58,6 @@ class PublicRecipeApiTests(TestCase):
 
     def setUp(self):
         self.client = APIClient()
-
 
     def test_required_auth(self):
         """Test the authenticaiton is required"""
@@ -206,6 +206,7 @@ class PrivateRecipeApiTests(TestCase):
         self.assertEqual(recipe.price, payload['price'])
         tags = recipe.tags.all()
         self.assertEqual(len(tags), 0)
+
 
 class RecipeImageUploadTests(TestCase):
 
