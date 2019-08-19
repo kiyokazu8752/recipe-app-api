@@ -20,7 +20,6 @@ from recipe.serializers import RecipeDetailSerializer
 RECIPES_URL = reverse('recipe:recipe-list')
 
 
-
 def image_upload_url(recipe_id):
     """Return URL for recipe image upload"""
     return reverse('recipe:recipe-upload-image', args=[recipe_id])
@@ -58,6 +57,7 @@ class PublicRecipeApiTests(TestCase):
 
     def setUp(self):
         self.client = APIClient()
+
 
     def test_required_auth(self):
         """Test the authenticaiton is required"""
